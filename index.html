@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moses Olayinka Ogundahunsi - Web Developer Portfolio.">
+    
+    <meta property="og:title" content="Moses Olayinka O. | Web Developer">
+    <meta property="og:description" content="I turn ideas into simple web apps.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="pdp.png">
+
+    <title>Moses Olayinka O. | Ogundahunsi</title>
+    
+    <link rel="icon" type="image/png" href="pdp.png">
+    <link rel="apple-touch-icon" href="pdp.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    
+    <link rel="preload" as="image" href="pdp.png">
+    <meta name="theme-color" content="#121212">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <div id="backdrop" class="backdrop"></div>
+
+        <aside id="side-drawer" class="side-drawer">
+            <div class="drawer-header">
+                <small class="drawer-label">SYSTEM STATUS</small>
+                <button id="close-menu" class="icon-btn" aria-label="Close Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <div class="drawer-content">
+                <div class="dev-id-card">
+                    <div class="id-header">
+                        <span class="status-dot pulse"></span>
+                        <span class="status-text">ONLINE / AVAILABLE</span>
+                    </div>
+                    <div class="id-body">
+                        <h3>Moses O.</h3>
+                        <p class="role">Frontend Engineer</p>
+                        <p class="location">Benin City, NG</p>
+                    </div>
+                </div>
+
+                <div class="drawer-actions">
+                    <button id="share-btn" class="drawer-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        Share Portfolio
+                    </button>
+                    
+                    <a href="https://github.com/Moyinks" target="_blank" rel="noopener" class="drawer-btn primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        View My Code
+                    </a>
+                </div>
+            </div>
+            
+            <div class="drawer-footer">
+                <small>ID: MO-2025-DEV</small>
+            </div>
+        </aside>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-container">
+                    <img src="pdp.png" alt="Moses Olayinka O." class="profile-pic" width="100" height="100">
+                    <div class="status-indicator" aria-label="Available for work"></div>
+                </div>
+                <h2 class="sidebar-name">Moses O.</h2>
+                <a href="https://x.com/ogundahunsiM" target="_blank" rel="noopener" class="sidebar-handle">@ogundahunsiM</a>
+            </div>
+
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#projects" class="nav-link">Work</a></li>
+                    <li><a href="#skills" class="nav-link">Stack</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                    <svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <span>Theme</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="mobile-header">
+                <div class="logo-area">
+                    <img src="pdp.png" alt="Profile" class="mobile-pdp">
+                    <div class="logo-text-col">
+                        <span class="logo-name">Moses O.</span>
+                    </div>
+                </div>
+
+                <button id="menu-btn" class="icon-btn menu-toggle" aria-label="Open Menu">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </header>
+
+            <div class="scroll-container">
+                
+                <section id="home" class="hero-section">
+                    <span class="greeting">Hi, I'm Moses</span>
+                    <h1>I turn ideas into <br> <span class="highlight">simple web apps.</span></h1>
+                    <p class="tagline">Building resilient web applications that work on any network.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">View My Work</a>
+                        <a href="#contact" class="btn-secondary">Contact Me</a>
+                    </div>
+                </section>
+
+                <section id="projects" class="section-block">
+                    <h2 class="section-header">Selected Work</h2>
+                    <div class="projects-grid">
+                        
+                        <article class="project-card">
+                            <div class="card-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+                            </div>
+                            <div class="card-content">
+                                <h3>Tic Tac Toe PWA</h3>
+                                <p>An offline-first Progressive Web App designed for zero-latency gameplay. Features a custom state management system, heuristic AI logic, and Service Worker caching for instant load times on low-end devices.</p>
+                                <div class="tech-tags">
+                                    <span>Vanilla JS</span><span>Service Workers</span><span>State Mgmt</span>
+                                </div>
+                                <div class="card-links">
+                                    <a href="https://tictactoe-cyan-eight.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+                                    <a href="https://github.com/Moyinks/moyinks-tictactoe.git" target="_blank" rel="noopener">GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="card-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                            </div>
+                            <div class="card-content">
+                                <h3>QuickShop Inventory</h3>
+                                <p>A mobile-first POS system engineered for unreliable networks. Implements <strong>Optimistic UI</strong> for instant feedback and uses <strong>IndexedDB</strong> to queue offline transactions, automatically syncing with Firebase when connectivity returns.</p>
+                                <div class="tech-tags">
+                                    <span>Firebase Sync</span><span>IndexedDB</span><span>Auth</span>
+                                </div>
+                                <div class="card-links">
+                                    <a href="https://quickshop-ten.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+                                    <a href="https://github.com/Moyinks/QuickShop.git" target="_blank" rel="noopener">GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <section id="skills" class="section-block">
+                    <h2 class="section-header">Tech Stack</h2>
+                    <div class="skills-wrapper">
+                        <div class="skill-category">
+                            <h3>Core</h3>
+                            <ul class="skills-list">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript (ES6+)</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Capabilities</h3>
+                            <ul class="skills-list">
+                                <li>PWA / Service Workers</li>
+                                <li>Firebase / Auth</li>
+                                <li>Offline Caching</li>
+                                <li>Database Mgmt</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools</h3>
+                            <ul class="skills-list">
+                                <li>Vercel Deployment</li>
+                                <li>Git & GitHub</li>
+                                <li>AI-Assisted Coding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="about" class="section-block">
+                    <h2 class="section-header">About Me</h2>
+                    <div class="about-content">
+                        <p>I am a Frontend Engineer focused on Performance and Offline-First architecture. While others build static websites, I build Progressive Web Apps (PWAs) that behave like native mobile applications. I believe software should be fast, accessible, and functional on any device.</p>
+                    </div>
+                </section>
+
+                <section id="contact" class="section-block contact-section">
+                    <h2 class="section-header">Ready to ship?</h2>
+                    <p class="contact-tagline">Have a crazy idea or just want to geek out about PWAs? Let's make it happen.</p>
+                    <div class="contact-links">
+                        <a href="mailto:ogundahunsiolayinkamoses@gmail.com" class="contact-pill email">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            Email Me
+                        </a>
+
+                        <a href="https://x.com/ogundahunsiM" target="_blank" rel="noopener" class="contact-pill">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                            </svg>
+                            Follow
+                        </a>
+
+                        <a href="https://github.com/Moyinks" target="_blank" rel="noopener" class="contact-pill resume">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </section>
+
+                <footer class="main-footer">
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> Moses Olayinka O.</p>
+                </footer>
+                
+                <div class="bottom-spacer"></div>
+            </div>
+        </main>
+
+        <nav class="mobile-dock">
+            <a href="#home" class="dock-item active">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Home</span>
+            </a>
+            <a href="#projects" class="dock-item">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <span>Work</span>
+            </a>
+            <button id="mobile-theme-toggle" class="dock-item central-btn" aria-label="Toggle Theme">
+                <div class="btn-bg">
+                    <svg class="icon icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </div>
+            </button>
+            <a href="#skills" class="dock-item">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <span>Stack</span>
+            </a>
+            <a href="#contact" class="dock-item">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>Chat</span>
+            </a>
+        </nav>
+
+    </div>
+
+</body>
+</html>
