@@ -141,6 +141,10 @@
                                 <div class="card-links">
                                     <a href="https://obsidiansecurity.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
                                     <a href="https://github.com/Moyinks/obsidian.git" target="_blank" rel="noopener">GitHub</a>
+                                    <button class="project-read-more" data-project-id="obsidian">
+                                        See Full Story
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </button>
                                 </div>
                             </div>
                         </article>
@@ -158,6 +162,10 @@
                                 <div class="card-links">
                                     <a href="https://quickshop-ten.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
                                     <a href="https://github.com/Moyinks/QuickShop.git" target="_blank" rel="noopener">GitHub</a>
+                                    <button class="project-read-more" data-project-id="quickshop">
+                                        See Full Story
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </button>
                                 </div>
                             </div>
                         </article>
@@ -199,7 +207,7 @@
                 <section id="about" class="section-block">
                     <h2 class="section-header">About Me</h2>
                     <div class="about-content">
-                        <p>I specialize in engineering Progressive Web Apps (PWAs) that prioritize data privacy and network resilience. My recent work focuses on Zero-Knowledge Architecture...</p>
+                        <p>I specialize in engineering Progressive Web Apps (PWAs) that prioritize data privacy and network resilience. My recent work focuses on Zero-Knowledge Architecture, building resilient systems that function effectively regardless of connectivity status.</p>
                     </div>
                 </section>
 
@@ -229,8 +237,6 @@
                 <footer class="main-footer">
                     <p>&copy; <script>document.write(new Date().getFullYear())</script> Moses Olayinka O.</p>
                 </footer>
-                
-                <div class="bottom-spacer"></div>
             </div>
         </main>
 
@@ -258,6 +264,58 @@
                 <span>Chat</span>
             </a>
         </nav>
+
+        <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-content">
+                <button id="close-modal" class="icon-btn modal-close" aria-label="Close Project Story">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                
+                <header class="modal-header">
+                    <h2 id="modal-title" class="modal-title">Project Title</h2>
+                    <div id="modal-tech-tags" class="tech-tags"></div>
+                </header>
+
+                <div class="modal-body">
+                    
+                    <div class="modal-hero-image-container">
+                        <img id="modal-hero-image" src="" alt="Project Hero Image" class="modal-hero-img">
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>The Problem</h3>
+                        <p id="modal-problem">The challenge this project sought to overcome.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>The Solution</h3>
+                        <p id="modal-solution">The architecture and engineering decisions made to solve the problem.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>The Impact</h3>
+                        <p id="modal-impact">The measurable results and significance of the project.</p>
+                    </div>
+
+                    <div class="modal-images-section">
+                        <h3>Screenshots</h3>
+                        <div id="modal-images-grid" class="modal-images">
+                            </div>
+                    </div>
+                </div>
+
+                <footer class="modal-footer">
+                    <a id="modal-live-demo" href="#" target="_blank" rel="noopener" class="btn-primary">
+                        View Live Demo
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                    <a id="modal-github" href="#" target="_blank" rel="noopener" class="btn-secondary">
+                        View GitHub Repo
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </footer>
+            </div>
+        </div>
 
     </div>
 
