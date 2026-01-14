@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroImage: "image1a.png", // Placeholder
             problem: "Users lacked a truly private, client-side encrypted vault for sensitive data, forcing reliance on trust-based cloud providers. The challenge was building true Zero-Knowledge encryption into a Progressive Web App (PWA) that could function reliably offline.",
             solution: "A PWA implementing **Client-Side End-to-End Encryption** using the browser's Web Crypto API (AES-GCM for encryption and PBKDF2 for key derivation). Data is encrypted before leaving the browser, ensuring the server (Supabase) never holds unencrypted user secrets. Offline support is achieved using a Service Worker and IndexedDB for local caching and synchronization.",
-            impact: "Established a market-ready, zero-knowledge data vault, preserving user privacy and providing access to sensitive records even in offline or intermittent network conditions. This model completely removes the threat of server-side data breaches compromising user information.",
+            impact: "Established an 'almost market-ready', zero-knowledge data vault, preserving user privacy and providing access to sensitive records even in offline or intermittent network conditions. This model completely removes the threat of server-side data breaches compromising user information.",
             screenshots: [
                 "image1b.png", // Placeholder
                 "image1c.png", // Placeholder
