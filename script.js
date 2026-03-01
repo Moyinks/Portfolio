@@ -1,270 +1,451 @@
+/* =========================================
+   PORTFOLIO SCRIPT
+   Moses Olayinka | PWA & Security Engineer
+   ========================================= */
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* =========================================
-       PROJECT DATA (MOCK CONTENT FOR MODAL)
+       PROJECT DATA
        ========================================= */
     const projectsData = {
         obsidian: {
-            title: "Obsidian Secure Vault",
-            tags: ["Web Crypto API", "Supabase", "Zero Knowledge", "AES-GCM"],
-            live: "https://obsidiansecurity.vercel.app/",
-            github: "https://github.com/Moyinks/obsidian.git",
-            heroImage: "image1a.png", // Placeholder
-            problem: "Users lacked a truly private, client-side encrypted vault for sensitive data, forcing reliance on trust-based cloud providers. The challenge was building true Zero-Knowledge encryption into a Progressive Web App (PWA) that could function reliably offline.",
-            solution: "A PWA implementing **Client-Side End-to-End Encryption** using the browser's Web Crypto API (AES-GCM for encryption and PBKDF2 for key derivation). Data is encrypted before leaving the browser, ensuring the server (Supabase) never holds unencrypted user secrets. Offline support is achieved using a Service Worker and IndexedDB for local caching and synchronization.",
-            impact: "Established an 'almost market-ready', zero-knowledge data vault, preserving user privacy and providing access to sensitive records even in offline or intermittent network conditions. This model completely removes the threat of server-side data breaches compromising user information.",
-            screenshots: [
-                "image1b.png", // Placeholder
-                "image1c.png", // Placeholder
-                "image1d.png"  // Placeholder
-            ]
+            title:      "Obsidian Secure Vault",
+            tags:       ["Web Crypto API", "Supabase", "Zero Knowledge", "AES-GCM"],
+            live:       "https://obsidiansecurity.vercel.app/",
+            github:     "https://github.com/Moyinks/obsidian.git",
+            heroImage:  "image1a.png",
+            problem:    "Users lacked a truly private, client-side encrypted vault for sensitive data, forcing reliance on trust-based cloud providers. The challenge was building true Zero-Knowledge encryption into a Progressive Web App (PWA) that could function reliably offline.",
+            solution:   "A PWA implementing client-side end-to-end encryption using the browser's Web Crypto API (AES-GCM for encryption and PBKDF2 for key derivation). Data is encrypted before leaving the browser, ensuring the server (Supabase) never holds unencrypted user secrets. Offline support is achieved using a Service Worker and IndexedDB for local caching and synchronization.",
+            impact:     "Established an almost market-ready, zero-knowledge data vault, preserving user privacy and providing access to sensitive records even in offline or intermittent network conditions. This model completely removes the threat of server-side data breaches compromising user information.",
+            screenshots: ["image1b.png", "image1c.png", "image1d.png"]
         },
+
         quickshop: {
-            title: "QuickShop Inventory",
-            tags: ["Firebase Sync", "IndexedDB", "Auth", "Optimistic UI", "PWA"],
-            live: "https://quickshop-ten.vercel.app/",
-            github: "https://github.com/Moyinks/QuickShop.git",
-            heroImage: "image2a.png", // Placeholder
-            problem: "Retail Point-of-Sale (POS) systems in areas with poor internet connectivity suffer from frustrating latency and transaction failures, leading to poor user experience and lost sales.",
-            solution: "Developed a mobile-first PWA with an **Optimistic UI**, giving instant feedback to the user on every action, regardless of network status. Transactions are immediately written to IndexedDB, and a background Service Worker manages synchronization, queuing failed transactions and automatically retrying when a stable connection is detected, ensuring data eventual consistency.",
-            impact: "Created a resilient POS system capable of operating continuously in 100% offline mode. The Optimistic UI provides a seamless user experience, eliminating perceived latency and dramatically increasing operational reliability in low-bandwidth environments.",
-            screenshots: [
-                "image2b.png", // Placeholder
-                "image2c.png", // Placeholder
-                "image2d.png"  // Placeholder
-            ]
+            title:      "QuickShop Inventory",
+            tags:       ["Firebase Sync", "IndexedDB", "Auth", "Optimistic UI", "PWA"],
+            live:       "https://quickshoppify.vercel.app/",
+            github:     "https://github.com/moyinksv-ai/QuickShop.git",
+            heroImage:  "image2a.png",
+            problem:    "Retail Point-of-Sale (POS) systems in areas with poor internet connectivity suffer from frustrating latency and transaction failures, leading to poor user experience and lost sales.",
+            solution:   "Developed a mobile-first PWA with an Optimistic UI, giving instant feedback to the user on every action, regardless of network status. Transactions are immediately written to IndexedDB, and a background Service Worker manages synchronization, queuing failed transactions and automatically retrying when a stable connection is detected.",
+            impact:     "Created a resilient POS system capable of operating continuously in 100% offline mode. The Optimistic UI provides a seamless user experience, eliminating perceived latency and dramatically increasing operational reliability in low-bandwidth environments.",
+            screenshots: ["image2b.png", "image2c.png", "image2d.png"]
+        },
+
+        nextrade: {
+            title:      "NexTrade Fintech",
+            tags:       ["Supabase Sync", "Auth", "Optimistic UI", "PWA", "Ledger-first"],
+            live:       "https://nextradecommerce.vercel.app/",
+            github:     "https://github.com/Moyinks/NexTrade.git",
+            heroImage:  "nex-hero.png",
+            problem:    "Liquid millennials want predictable growth and clear custody for crypto holdings, but many products trade off transparency or ease-of-use. NexTrade prototypes a custody-first vault with admin-verified deposits and two yield strategies.",
+            solution:   "Per-user deposit addresses and an on-chain watcher feed an escrow_onchain ledger. Deposits are auto-approved or flagged for admin review. Approved funds are credited to user wallets; users can buy crypto or invest in two strategy pools. All money movements are recorded as append-only ledger entries and admin actions are audited.",
+            impact:     "Prototype validates deposit → approval → invest flows and admin reconciliation. Demonstrates how a ledger-first architecture prevents balance drift and supports predictable yields without sacrificing custody transparency.",
+            screenshots: ["nex-1.png", "nex-2.png", "nex-3.png"]
         }
     };
+
+    /* =========================================
+       ELEMENT REFS
+       ========================================= */
+    const html            = document.documentElement;
+    const modal           = document.getElementById('project-modal');
+    const modalContent    = modal ? modal.querySelector('.modal-content') : null;
+    const modalTitle      = document.getElementById('modal-title');
+    const modalTags       = document.getElementById('modal-tech-tags');
+    const modalProblem    = document.getElementById('modal-problem');
+    const modalSolution   = document.getElementById('modal-solution');
+    const modalImpact     = document.getElementById('modal-impact');
+    const modalHeroImage  = document.getElementById('modal-hero-image');
+    const modalImagesGrid = document.getElementById('modal-images-grid');
+    const modalLiveDemo   = document.getElementById('modal-live-demo');
+    const modalGithub     = document.getElementById('modal-github');
+    const closeModalBtn   = document.getElementById('close-modal');
+    const readMoreButtons = document.querySelectorAll('.project-read-more');
+    const shockwaveRing   = document.getElementById('shockwave-ring');
+
+    let lastFocusedButton = null;
+    let closeTimeout      = null;
 
     /* =========================================
        1. THEME MANAGEMENT
        ========================================= */
-    const html = document.documentElement;
-    const desktopBtn = document.getElementById('theme-toggle');
-    const mobileBtn = document.getElementById('mobile-theme-toggle');
-    
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    applyTheme(savedTheme);
+    const desktopThemeBtn = document.getElementById('theme-toggle');
+    const mobileThemeBtn  = document.getElementById('mobile-theme-toggle');
 
-    if (desktopBtn) desktopBtn.addEventListener('click', () => toggleTheme());
-    if (mobileBtn) mobileBtn.addEventListener('click', () => toggleTheme());
-
-    function toggleTheme() {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'gradient' : 'dark';
-        applyTheme(newTheme);
-    }
+    applyTheme(localStorage.getItem('theme') || 'dark');
 
     function applyTheme(theme) {
         html.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        updateIcons(desktopBtn, theme);
-        updateIcons(mobileBtn, theme);
+        const isDark = theme === 'dark';
+        document.querySelectorAll('.icon-sun').forEach(el  => el.style.display = isDark ? 'block' : 'none');
+        document.querySelectorAll('.icon-moon').forEach(el => el.style.display = isDark ? 'none'  : 'block');
     }
 
-    function updateIcons(btn, theme) {
-        if (!btn) return;
-        const sun = btn.querySelector('.icon-sun');
-        const moon = btn.querySelector('.icon-moon');
+    function toggleTheme() {
+        applyTheme(html.getAttribute('data-theme') === 'dark' ? 'gradient' : 'dark');
+    }
 
-        if (theme === 'dark') {
-            if (sun) sun.style.display = 'block';
-            if (moon) moon.style.display = 'none';
-            btn.setAttribute('aria-label', 'Switch to gradient theme');
-        } else {
-            if (sun) sun.style.display = 'none';
-            if (moon) moon.style.display = 'block';
-            btn.setAttribute('aria-label', 'Switch to dark theme');
+    if (desktopThemeBtn) desktopThemeBtn.addEventListener('click', toggleTheme);
+    if (mobileThemeBtn)  mobileThemeBtn.addEventListener('click',  toggleTheme);
+
+    /* =========================================
+       2. SHOCKWAVE RING HELPER
+       
+       Fires a 2-beat animation:
+       Beat 1 (t=0ms):   Accent ring expands from tap point — instant physical response
+       Beat 2 (t=80ms):  Clip-path ripple fill begins, flooding the screen
+    ========================================= */
+    function fireShockwave(originX, originY, onRingPeak) {
+        if (!shockwaveRing) {
+            if (onRingPeak) onRingPeak();
+            return;
         }
-    }
 
+        /* Position ring at tap point */
+        shockwaveRing.style.left   = originX + 'px';
+        shockwaveRing.style.top    = originY + 'px';
+        shockwaveRing.style.width  = '60px';
+        shockwaveRing.style.height = '60px';
 
-    /* =========================================
-       2. SIDE DRAWER LOGIC (The Surprise)
-       ========================================= */
-    const menuBtn = document.getElementById('menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu');
-    const drawer = document.getElementById('side-drawer');
-    const backdrop = document.getElementById('backdrop');
+        /* Remove class to reset animation, force reflow, re-add */
+        shockwaveRing.classList.remove('firing');
+        void shockwaveRing.offsetWidth; /* force reflow */
+        shockwaveRing.classList.add('firing');
 
-    function toggleDrawer() {
-        if (!drawer || !backdrop) return;
-        drawer.classList.toggle('open');
-        backdrop.classList.toggle('open');
-    }
+        /* Trigger modal fill on beat 2 */
+        setTimeout(() => {
+            if (onRingPeak) onRingPeak();
+        }, 80);
 
-    if (menuBtn) menuBtn.addEventListener('click', toggleDrawer);
-    if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleDrawer);
-    if (backdrop) backdrop.addEventListener('click', toggleDrawer);
-
-
-    /* =========================================
-       3. SHARE BUTTON LOGIC (Copy Link)
-       ========================================= */
-    const shareBtn = document.getElementById('share-btn');
-    
-    if (shareBtn) {
-        shareBtn.addEventListener('click', async () => {
-            try {
-                await navigator.clipboard.writeText(window.location.href);
-                const originalContent = shareBtn.innerHTML;
-                
-                shareBtn.innerHTML = `
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Copied!
-                `;
-                shareBtn.style.borderColor = '#10b981';
-                shareBtn.style.color = '#10b981';
-
-                setTimeout(() => {
-                    shareBtn.innerHTML = originalContent;
-                    shareBtn.style.borderColor = '';
-                    shareBtn.style.color = '';
-                }, 2000);
-                
-            } catch (err) {
-                console.error('Failed to copy', err);
-            }
+        /* Clean up class when animation ends */
+        shockwaveRing.addEventListener('animationend', function cleanup() {
+            shockwaveRing.classList.remove('firing');
+            shockwaveRing.removeEventListener('animationend', cleanup);
         });
     }
 
-
     /* =========================================
-       4. PROJECT MODAL LOGIC (The Story)
+       3. MODAL — OPEN / CLOSE
        ========================================= */
-    const modal = document.getElementById('project-modal');
-    const closeModalBtn = document.getElementById('close-modal');
-    const readMoreButtons = document.querySelectorAll('.project-card .project-read-more');
-
-    // Modal elements
-    const modalTitle = document.getElementById('modal-title');
-    const modalTags = document.getElementById('modal-tech-tags');
-    const modalProblem = document.getElementById('modal-problem');
-    const modalSolution = document.getElementById('modal-solution');
-    const modalImpact = document.getElementById('modal-impact');
-    const modalLiveDemo = document.getElementById('modal-live-demo');
-    const modalGithub = document.getElementById('modal-github');
-    const modalHeroImage = document.getElementById('modal-hero-image');
-    const modalImagesGrid = document.getElementById('modal-images-grid');
-
-    function openModal(projectId) {
+    function openModal(projectId, triggerEl, clientX, clientY) {
         const project = projectsData[projectId];
-        if (!project) return;
+        if (!project || !modal || !modalContent) return;
 
-        // Populate Modal Content
-        modalTitle.textContent = project.title;
-        modalProblem.textContent = project.problem;
-        modalSolution.textContent = project.solution;
-        modalImpact.textContent = project.impact;
-        
-        // CRITICAL FIX: Ensure href attributes are set correctly
-        if (modalLiveDemo) modalLiveDemo.href = project.live;
-        if (modalGithub) modalGithub.href = project.github;
-        
-        // Add Hero Image
-        modalHeroImage.src = project.heroImage; // Set placeholder image name
-        modalHeroImage.alt = `${project.title} screenshot`;
+        /* Populate */
+        try {
+            if (modalTitle)    modalTitle.textContent    = project.title    || '';
+            if (modalProblem)  modalProblem.textContent  = project.problem  || '';
+            if (modalSolution) modalSolution.textContent = project.solution || '';
+            if (modalImpact)   modalImpact.textContent   = project.impact   || '';
+            if (modalLiveDemo) modalLiveDemo.href         = project.live     || '#';
+            if (modalGithub)   modalGithub.href           = project.github   || '#';
 
-        // Add Tags
-        modalTags.innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
+            if (modalHeroImage) {
+                modalHeroImage.src = project.heroImage || '';
+                modalHeroImage.alt = (project.title || projectId) + ' hero image';
+            }
+            if (modalTags) {
+                const tags = Array.isArray(project.tags) ? project.tags : [];
+                modalTags.innerHTML = tags.map(t => `<span>${t}</span>`).join('');
+            }
+            if (modalImagesGrid) {
+                const shots = Array.isArray(project.screenshots) ? project.screenshots : [];
+                modalImagesGrid.innerHTML = shots
+                    .map((src, i) => `<img src="${src}" alt="${project.title || ''} screenshot ${i + 1}" loading="lazy">`)
+                    .join('');
+            }
+        } catch (_) { /* populate error — still open */ }
 
-        // Add Screenshots (Placeholders)
-        modalImagesGrid.innerHTML = project.screenshots.map(src => 
-            `<img src="${src}" alt="${project.title} screenshot" loading="lazy">`
-        ).join('');
-        
-        // Display Modal
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden'; // Prevent background scroll
+        /* Origin: button center in viewport coords */
+        let ox = clientX, oy = clientY;
+        if (triggerEl) {
+            const r = triggerEl.getBoundingClientRect();
+            ox = r.left + r.width  / 2;
+            oy = r.top  + r.height / 2;
+        }
+
+        /* Convert to % for CSS clip-path */
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const originXpct = ((ox / vw) * 100).toFixed(2) + '%';
+        const originYpct = ((oy / vh) * 100).toFixed(2) + '%';
+
+        modalContent.style.setProperty('--origin-x', originXpct);
+        modalContent.style.setProperty('--origin-y', originYpct);
+
+        /* Aria */
+        readMoreButtons.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+        if (triggerEl) {
+            triggerEl.setAttribute('aria-expanded', 'true');
+            lastFocusedButton = triggerEl;
+        }
+
+        /* Clear any running close animation */
+        if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
+        modal.classList.remove('closing');
+
+        /* Reset scroll */
+        const modalBody = modal.querySelector('.modal-body');
+        if (modalBody) modalBody.scrollTop = 0;
+
+        /* Beat 1: shockwave ring */
+        fireShockwave(ox, oy, () => {
+            /* Beat 2: modal ripple fill */
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            if (closeModalBtn) setTimeout(() => closeModalBtn.focus(), 60);
+        });
     }
 
     function closeModal() {
+        if (!modal || !modal.classList.contains('open')) return;
+
+        modal.classList.add('closing');
         modal.classList.remove('open');
-        document.body.style.overflow = '';
+        modal.setAttribute('aria-hidden', 'true');
+
+        closeTimeout = setTimeout(() => {
+            modal.classList.remove('closing');
+            document.body.style.overflow = '';
+            if (lastFocusedButton) {
+                lastFocusedButton.setAttribute('aria-expanded', 'false');
+                lastFocusedButton.focus();
+                lastFocusedButton = null;
+            }
+        }, 420);
     }
 
-    // Event Listeners for project cards
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const projectId = e.currentTarget.dataset.projectId;
-            openModal(projectId);
+    readMoreButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            openModal(this.dataset.projectId, this, e.clientX, e.clientY);
         });
     });
 
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
     if (modal) {
-        modal.addEventListener('click', (e) => {
-            // Close modal if user clicks outside the modal-content
-            if (e.target.id === 'project-modal') {
-                closeModal();
-            }
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+        });
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('open')) closeModal();
+    });
+
+    /* =========================================
+       4. DRAWER
+       ========================================= */
+    const drawer   = document.getElementById('side-drawer');
+    const backdrop = document.getElementById('backdrop');
+    const menuBtn  = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+
+    function openDrawer() {
+        if (!drawer) return;
+        drawer.classList.add('open');
+        if (backdrop) backdrop.classList.add('open');
+        if (menuBtn)  menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+        if (!drawer) return;
+        drawer.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('open');
+        if (menuBtn)  menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    if (menuBtn)  menuBtn.addEventListener('click',  openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click',  closeDrawer);
+    if (backdrop) backdrop.addEventListener('click',  closeDrawer);
+
+    /* =========================================
+       5. SHARE BUTTON
+       ========================================= */
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+            const shareData = { title: 'Moses Olayinka | PWA & Security Engineer', text: "Check out Moses's portfolio — PWA, E2EE, and offline-first engineering.", url: window.location.href };
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    await navigator.clipboard.writeText(window.location.href);
+                    const orig = shareBtn.textContent;
+                    shareBtn.textContent = 'Link copied!';
+                    setTimeout(() => { shareBtn.textContent = orig; }, 2000);
+                }
+            } catch (_) {}
+            closeDrawer();
         });
     }
 
     /* =========================================
-       5. SCROLL SPY (Active Link Highlighting)
+       6. SCROLL SPY
        ========================================= */
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link, .dock-item');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -50% 0px', 
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                setActiveLink(id);
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => observer.observe(section));
+    const sections  = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('.nav-link');
+    const dockItems = document.querySelectorAll('.dock-item[href]');
 
     function setActiveLink(id) {
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
-            }
-        });
+        navLinks.forEach(a  => a.classList.toggle('active',  a.getAttribute('href') === '#' + id));
+        dockItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
     }
 
-    
+    if ('IntersectionObserver' in window && sections.length) {
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) setActiveLink(e.target.id); });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(s => spy.observe(s));
+    }
+
     /* =========================================
-       6. SMOOTH SCROLLING (FIXED: Excludes modal links)
+       7. CARD ENTRANCE — staggered fade-up
        ========================================= */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        
-        // FIX: If the anchor is inside the modal, skip it, as it should be an external link 
-        // that shouldn't be prevented by smooth scrolling logic.
-        if (anchor.closest('#project-modal')) {
-             return; 
+    const animatedCards = document.querySelectorAll('.card-animate');
+
+    if ('IntersectionObserver' in window && animatedCards.length) {
+        const cardObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const idx = Array.from(animatedCards).indexOf(entry.target);
+                    setTimeout(() => entry.target.classList.add('visible'), idx * 130);
+                    cardObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        animatedCards.forEach(c => cardObs.observe(c));
+    } else {
+        animatedCards.forEach(c => c.classList.add('visible'));
+    }
+
+    /* =========================================
+       8. CARD TILT ON HOVER / TOUCH
+       
+       Each card rotates max ±5° on X/Y axes
+       based on where the pointer is within the card.
+       Resets smoothly on mouse leave / touch end.
+       ========================================= */
+    const tiltCards = document.querySelectorAll('.project-card');
+    const TILT_MAX  = 5; /* degrees */
+
+    function applyTilt(card, e) {
+        const rect  = card.getBoundingClientRect();
+        const cx    = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : rect.left + rect.width  / 2);
+        const cy    = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0] ? e.touches[0].clientY : rect.top  + rect.height / 2);
+
+        /* Normalize: -1 to +1 within card */
+        const nx = ((cx - rect.left)  / rect.width)  * 2 - 1;
+        const ny = ((cy - rect.top)   / rect.height) * 2 - 1;
+
+        /* Tilt: positive nx → tilt right; positive ny → tilt backward */
+        const rotateY =  nx * TILT_MAX;
+        const rotateX = -ny * TILT_MAX;
+
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(4px)`;
+    }
+
+    function resetTilt(card) {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+    }
+
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove',  e => applyTilt(card, e));
+        card.addEventListener('mouseleave', () => resetTilt(card));
+        card.addEventListener('touchmove',  e => applyTilt(card, e),  { passive: true });
+        card.addEventListener('touchend',   () => resetTilt(card));
+    });
+
+    /* =========================================
+       9. HERO H1 — staggered word entrance
+       
+       Each .word gets class .revealed with
+       80ms delay per word after page load.
+       ========================================= */
+    const words = document.querySelectorAll('.hero-headline .word');
+    words.forEach((word, i) => {
+        setTimeout(() => word.classList.add('revealed'), 200 + i * 80);
+    });
+
+    /* =========================================
+       10. TYPEWRITER LOOP
+       
+       Cycles through rotating phrases about
+       what Moses is currently building/studying.
+       Runs simultaneously in drawer and sidebar.
+       ========================================= */
+    const phrases = [
+        '▸ on-chain escrow patterns',
+        '▸ E2EE key derivation UX',
+        '▸ offline-first sync logic',
+        '▸ ledger-first data models',
+        '▸ PWA installability flows',
+    ];
+
+    const typewriterTargets = [
+        document.getElementById('drawer-typewriter'),
+        document.getElementById('sidebar-typewriter'),
+    ].filter(Boolean);
+
+    let phraseIndex = 0;
+    let charIndex   = 0;
+    let isDeleting  = false;
+    let twTimer     = null;
+
+    function tick() {
+        const current = phrases[phraseIndex];
+
+        if (!isDeleting) {
+            charIndex++;
+            typewriterTargets.forEach(el => el.textContent = current.slice(0, charIndex));
+
+            if (charIndex === current.length) {
+                isDeleting = true;
+                twTimer = setTimeout(tick, 2400); /* pause at full phrase */
+                return;
+            }
+        } else {
+            charIndex--;
+            typewriterTargets.forEach(el => el.textContent = current.slice(0, charIndex));
+
+            if (charIndex === 0) {
+                isDeleting  = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                twTimer = setTimeout(tick, 400); /* brief pause before next phrase */
+                return;
+            }
         }
 
+        /* Typing speed: 55ms, deleting speed: 28ms */
+        twTimer = setTimeout(tick, isDeleting ? 28 : 55);
+    }
+
+    /* Start typewriter after hero words finish (~1.2s) */
+    setTimeout(tick, 1200);
+
+    /* =========================================
+       11. SMOOTH SCROLL
+       ========================================= */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return; // Ignore placeholder links
-
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                // Close drawer if open (mobile UX)
-                if (drawer && drawer.classList.contains('open')) {
-                    toggleDrawer();
-                }
-
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                setActiveLink(targetId.substring(1));
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+                closeDrawer();
             }
         });
     });
+
+    /* =========================================
+       12. FOOTER YEAR
+       ========================================= */
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 });
