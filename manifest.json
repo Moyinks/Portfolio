@@ -1,0 +1,24 @@
+{
+  "name": "Moses Olayinka | Product Engineer",
+  "short_name": "Moyinks",
+  "description": "Product engineer building offline-first PWAs, fintech infrastructure, and E2EE systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "pdp.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "pdp.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

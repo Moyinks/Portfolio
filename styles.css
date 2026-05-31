@@ -579,3 +579,167 @@ button { font-family: inherit; }
     /* Shockwave on desktop: smaller initial size */
     .shockwave-ring { border-width: 1.5px; }
 }
+
+
+/* ── Contact Form ────────────────────────────────────────────────────────── */
+.contact-form {
+  display:       flex;
+  flex-direction: column;
+  gap:           10px;
+  margin-bottom: 24px;
+  max-width:     480px;
+}
+
+.contact-form textarea,
+.contact-form input[type="email"] {
+  background:    var(--color-surface, rgba(255,255,255,0.05));
+  border:        1px solid var(--color-border, rgba(255,255,255,0.1));
+  border-radius: 10px;
+  color:         var(--color-text, #fff);
+  font-family:   inherit;
+  font-size:     14px;
+  padding:       12px 14px;
+  width:         100%;
+  box-sizing:    border-box;
+  resize:        vertical;
+  transition:    border-color 0.2s;
+  outline:       none;
+}
+
+.contact-form textarea:focus,
+.contact-form input[type="email"]:focus {
+  border-color: var(--color-accent, #6c63ff);
+}
+
+.contact-form textarea::placeholder,
+.contact-form input[type="email"]::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.contact-form .contact-submit {
+  align-self:  flex-start;
+  display:     inline-flex;
+  align-items: center;
+  gap:         8px;
+}
+
+.contact-form-status {
+  font-size:  13px;
+  margin:     0;
+  min-height: 18px;
+}
+
+.contact-form-status.success { color: #4caf7d; }
+.contact-form-status.error   { color: #e05c5c; }
+
+/* ── Modal Architecture Decision section ────────────────────────────────── */
+#modal-arch-section {
+  background:    rgba(255, 255, 255, 0.03);
+  border-left:   2px solid var(--color-accent, #6c63ff);
+  border-radius: 0 8px 8px 0;
+  padding:       14px 16px;
+  margin-top:    4px;
+}
+
+#modal-arch-section h3 {
+  font-size:     11px;
+  font-weight:   700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  opacity:       0.5;
+  margin-bottom: 8px;
+}
+
+#modal-arch-section p {
+  font-size:   14px;
+  line-height: 1.65;
+  opacity:     0.85;
+}
+
+
+/* ── Availability indicator (hero) ──────────────────────────────────────── */
+.avail-indicator {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            7px;
+  font-size:      12px;
+  font-weight:    500;
+  letter-spacing: 0.3px;
+  color:          rgba(255, 255, 255, 0.5);
+  margin-bottom:  20px;
+  padding:        5px 12px;
+  border:         1px solid rgba(255, 255, 255, 0.09);
+  border-radius:  20px;
+  background:     rgba(255, 255, 255, 0.04);
+  width:          fit-content;
+}
+
+/* Availability pill (about section) */
+.avail-pill {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            7px;
+  font-size:      12px;
+  font-weight:    500;
+  color:          rgba(255, 255, 255, 0.5);
+  margin-bottom:  16px;
+  padding:        4px 10px;
+  border:         1px solid rgba(255, 255, 255, 0.09);
+  border-radius:  20px;
+  background:     rgba(255, 255, 255, 0.04);
+  width:          fit-content;
+}
+
+/* Pulsing green dot — available state */
+.avail-dot {
+  width:         7px;
+  height:        7px;
+  border-radius: 50%;
+  flex-shrink:   0;
+  background:    #4caf7d;
+  animation:     dot-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1;   box-shadow: 0 0 0 0   rgba(76, 175, 125, 0.4); }
+  50%       { opacity: 0.6; box-shadow: 0 0 0 4px rgba(76, 175, 125, 0);   }
+}
+
+/* Unavailable state */
+.avail-indicator.unavailable .avail-dot,
+.avail-pill.unavailable .avail-dot {
+  background: rgba(255, 255, 255, 0.25);
+  animation:  none;
+}
+
+/* ── Deploy status badge — verified state ───────────────────────────────── */
+/* Default .live-badge stays as-is (static "● Live" text).
+   .verified class is added by JS when the no-cors HEAD request succeeds. */
+.live-badge.verified {
+  color:        #4caf7d;
+  border-color: rgba(76, 175, 125, 0.25);
+  background:   rgba(76, 175, 125, 0.08);
+}
+
+/* ── About photo — identity treatment ───────────────────────────────────── */
+.about-photo-wrap {
+  position: relative;
+}
+
+.about-photo {
+  border-radius: 16px;
+  display:       block;
+  /* Subtle accent-toned shadow gives the photo a grounded, intentional feel */
+  box-shadow:
+    0 0  0  1px  rgba(255, 255, 255, 0.06),
+    0 8px 32px  -4px rgba(0, 0, 0, 0.55),
+    0 0  40px  -8px rgba(108, 99, 255, 0.18);
+  transition: box-shadow 0.3s ease;
+}
+
+.about-photo-wrap:hover .about-photo {
+  box-shadow:
+    0 0  0  1px  rgba(255, 255, 255, 0.1),
+    0 12px 40px -4px rgba(0, 0, 0, 0.6),
+    0 0  60px  -8px rgba(108, 99, 255, 0.28);
+}
