@@ -10,7 +10,7 @@
    invalidate stale assets and force re-download.
    ========================================================= */
 
-const CACHE_VERSION  = 'portfolio-v11.1';
+const CACHE_VERSION  = 'portfolio-v1.2';
 const SHELL_ASSETS   = [
     '/',
     '/styles.css',
