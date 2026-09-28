@@ -1,412 +1,412 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Moses Olayinka — I turn ideas into working products. Offline-first PWAs, full-stack apps, shipped from scratch.">
-    <meta property="og:title" content="Moses Olayinka | Product Engineer">
-    <meta property="og:description" content="I turn your idea into a working product. Offline-first, full-stack, built to last.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="pdp.png">
-    <title>Moses Olayinka | Product Engineer</title>
-    <link rel="icon" type="image/png" href="pdp.png">
-    <link rel="apple-touch-icon" href="pdp.png">
-
-    <!-- Theme applied before first paint — eliminates flash -->
-    <script>
-        (function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();
-    </script>
-
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js?v=5" defer></script>
-    <link rel="preload" as="image" href="pdp.png">
-    <style>
-        .about-opener {
-            font-size: 1.08em;
-            font-style: italic;
-            opacity: 0.92;
-            border-left: 2px solid currentColor;
-            padding-left: 0.85em;
-            margin-bottom: 1.1em;
-        }
-    </style>
-    <meta name="theme-color" content="#121212">
-    <meta name="twitter:card"        content="summary_large_image">
-    <meta name="twitter:creator"     content="@ogundahunsiM">
-    <meta property="og:url"          content="https://moyinks.dev/">
-    <link rel="manifest"             href="manifest.json">
-    <link rel="canonical"            href="https://moyinks.dev/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d0b">
+  <meta name="description" content="Moses Ogundahunsi — product-minded software developer. I build the part after 'it works': state, retries, recovery, trust boundaries and mobile product behavior.">
+  <meta property="og:title" content="Moses Ogundahunsi — Product-minded Software Developer">
+  <meta property="og:description" content="I build the part after 'it works'. Mobile-first products, state, recovery, trust and the failure paths that decide whether software holds up in use.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="moses.jpg">
+  <title>Moses Ogundahunsi — Product-minded Software Developer</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="moses.jpg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('mo-theme');
+      document.documentElement.setAttribute('data-theme', saved || 'dark');
+    })();
+  </script>
+  <script src="project-links.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="app-layout">
-
-    <div id="backdrop" class="backdrop"></div>
-
-    <!-- ===== SIDE DRAWER ===== -->
-    <aside id="side-drawer" class="side-drawer">
-        <div class="drawer-header">
-            <small class="drawer-label">SYSTEM STATUS</small>
-            <button id="close-menu" class="icon-btn" aria-label="Close Menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </button>
-        </div>
-        <div class="drawer-content">
-            <div class="dev-id-card">
-                <div class="id-header">
-                    <span class="status-dot pulse"></span>
-                    <span class="status-text">ONLINE / AVAILABLE</span>
-                </div>
-                <div class="id-body">
-                    <h3>Moses O.</h3>
-                    <p class="role">Product Engineer</p>
-                    <p class="location">Benin City, NG</p>
-                    <p class="currently" id="drawer-typewriter"></p>
-                </div>
-            </div>
-            <div class="drawer-actions">
-                <button id="share-btn" class="drawer-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                    Share Portfolio
-                </button>
-                <a href="https://github.com/Moyinks" target="_blank" rel="noopener" class="drawer-btn primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    View My Code
-                </a>
-            </div>
-        </div>
-        <div class="drawer-footer"><small>ID: MO-2025-DEV</small></div>
+  <div class="app-shell">
+    <aside class="desktop-rail" aria-label="Portfolio navigation">
+      <a class="rail-identity" href="#home">
+        <img src="moses.jpg" alt="Moses Ogundahunsi" class="rail-avatar">
+        <span><strong>Moses Ogundahunsi</strong><small>Product-minded software developer</small></span>
+      </a>
+      <nav class="rail-nav">
+        <a href="#home" data-nav="home" class="is-active"><span>01</span>Home</a>
+        <a href="#work" data-nav="work"><span>02</span>Work</a>
+        <a href="#lab" data-nav="lab"><span>03</span>Lab</a>
+        <a href="#about" data-nav="about"><span>04</span>About</a>
+        <a href="#contact" data-nav="contact"><span>05</span>Contact</a>
+      </nav>
+      <div class="rail-footer">
+        <p><i class="presence-dot" aria-hidden="true"></i> Open to engineering/product roles</p>
+        <button class="icon-control theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+        </button>
+      </div>
     </aside>
 
-    <!-- ===== DESKTOP SIDEBAR ===== -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <div class="profile-container">
-                <img src="pdp.png" alt="Moses Olayinka" class="profile-pic" width="100" height="100">
-                <div class="status-indicator pulse-ring" aria-label="Available for work"></div>
-            </div>
-            <h2 class="sidebar-name">Moses O.</h2>
-            <a href="https://x.com/ogundahunsiM" target="_blank" rel="noopener" class="sidebar-handle">@ogundahunsiM</a>
-            <p class="sidebar-currently" id="sidebar-typewriter"></p>
-        </div>
-        <nav class="desktop-nav" aria-label="Main navigation">
-            <ul>
-                <li><a href="#home"     class="nav-link active">Home</a></li>
-                <li><a href="#projects" class="nav-link">Work</a></li>
-                <li><a href="#skills"   class="nav-link">Stack</a></li>
-                <li><a href="#about"    class="nav-link">About</a></li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
-                <svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                <svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                <span>Theme</span>
-            </button>
-        </div>
-    </aside>
+    <header class="mobile-appbar">
+      <a class="mobile-identity" href="#home" aria-label="Back to home">
+        <img src="moses.jpg" alt="" class="mobile-avatar">
+        <span><strong>Moses Ogundahunsi</strong><small id="route-label">Home</small></span>
+      </a>
+      <div class="appbar-actions">
+        <span class="availability-dot" title="Open to roles"></span>
+        <button class="icon-control theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+        </button>
+      </div>
+    </header>
 
-    <!-- ===== MAIN CONTENT ===== -->
-    <main class="main-content">
-        <header class="mobile-header">
-            <div class="logo-area">
-                <img src="pdp.png" alt="Profile" class="mobile-pdp">
-                <div class="logo-text-col"><span class="logo-name">Moses O.</span></div>
-            </div>
-            <button id="menu-btn" class="icon-btn menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="side-drawer">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
+    <main id="main" class="main-view">
+      <section id="home" class="section hero-section" data-route="Home">
+        <div class="hero-copy">
+          <p class="hero-status"><i class="presence-dot" aria-hidden="true"></i> Open to engineering/product roles + selected freelance work</p>
+          <p class="hero-id">Moses Ogundahunsi · product-minded software developer</p>
+          <h1>I build the part after <em>“it works.”</em></h1>
+          <p class="hero-lede">The first version proves the idea. I care about what happens next — when the network disappears, somebody taps twice, two states disagree, the browser wakes up stale, or the interface tells a convincing lie.</p>
+          <div class="hero-actions">
+            <a class="action action-primary" href="#work">See what I’ve built</a>
+            <a class="action action-quiet" href="#contact">Bring me a problem</a>
+          </div>
+
+          <a class="now-live" href="#lab" aria-label="Currently building FlowLab and Betabot. Jump to Lab.">
+            <span class="now-mark"><i></i>NOW</span>
+            <span class="now-product" id="now-product" aria-hidden="true">FlowLab</span>
+            <span class="now-question-wrap" aria-hidden="true"><span id="now-question">How much can AI change before the artist disappears?</span></span>
+            <span class="now-arrow" aria-hidden="true">↘</span>
+            <span class="sr-only">Currently building FlowLab and Betabot.</span>
+          </a>
+        </div>
+
+        <a class="continue-row" href="#useful"><span>Start here</span><strong>Where software stops being simple</strong><b aria-hidden="true">↓</b></a>
+      </section>
+
+      <section id="useful" class="section useful-section" data-route="Home" aria-labelledby="useful-title">
+        <header class="section-heading compact">
+          <p class="eyebrow">WHERE I’M USEFUL</p>
+          <h2 id="useful-title">Tell me where it gets ugly.</h2>
+          <p>You don’t need the feature list first. Give me the part that stopped being simple.</p>
         </header>
 
-        <div class="scroll-container">
+        <div class="problem-list">
+          <details class="problem-row" open>
+            <summary><span class="problem-number">01</span><span class="problem-title">“It works until people do it twice.”</span><span class="problem-plus" aria-hidden="true">+</span></summary>
+            <div class="problem-answer"><p>Payment retries. Duplicate submissions. Two tabs. Back-navigation. Reopening the app.</p><strong>When one intention can become two requests, I look for identity and idempotency before I add another disabled button.</strong></div>
+          </details>
+          <details class="problem-row">
+            <summary><span class="problem-number">02</span><span class="problem-title">“Nobody knows which number is actually true.”</span><span class="problem-plus" aria-hidden="true">+</span></summary>
+            <div class="problem-answer"><p>The UI says one thing. Cache says something older. Database says something else.</p><strong>That is an authority problem before it is a rendering problem.</strong></div>
+          </details>
+          <details class="problem-row">
+            <summary><span class="problem-number">03</span><span class="problem-title">“It works at your desk.”</span><span class="problem-plus" aria-hidden="true">+</span></summary>
+            <div class="problem-answer"><p>Then Chrome gets backgrounded on an Android phone, the connection changes, and the user returns twenty minutes later.</p><strong>I treat resume, stale state, weak networks and small screens as product states — not surprises.</strong></div>
+          </details>
+          <details class="problem-row">
+            <summary><span class="problem-number">04</span><span class="problem-title">“We’ve fixed this bug before.”</span><span class="problem-plus" aria-hidden="true">+</span></summary>
+            <div class="problem-answer"><p>If the same bug keeps returning in different clothes, I assume the implementation is obeying the wrong rule somewhere.</p><strong>I trace the rule — state ownership, timing, cache, database or API — and fix that instead of the latest symptom.</strong></div>
+          </details>
+        </div>
 
-                <div class="avail-indicator available" id="avail-hero">
-                    <span class="avail-dot"></span>
-                    Hi, I'm open to new projects
-                </div>
+        <a class="continue-row" href="#work"><span>Next</span><strong>Featured engineering work</strong><b aria-hidden="true">↓</b></a>
+      </section>
 
-                <!-- Words are wrapped in spans for staggered entrance -->
-                <h1 class="hero-headline" aria-label="I turn ideas into products people actually use.">
-                    <span class="word">I</span>
-                    <span class="word">turn</span>
-                    <span class="word highlight-word"><span class="highlight">ideas</span></span>
-                    <span class="word">into</span>
-                    <span class="word highlight-word"><span class="highlight">products</span></span>
-                    <span class="word highlight-word"><span class="highlight">people</span></span>
-                    <span class="word highlight-word"><span class="highlight">actually</span></span>
-                    <span class="word highlight-word"><span class="highlight">use.</span></span>
-                </h1>
+      <section id="work" class="section work-section" data-route="Work" aria-labelledby="work-title">
+        <header class="section-heading">
+          <p class="eyebrow">FEATURED ENGINEERING WORK</p>
+          <h2 id="work-title">Three projects. Three different things that can go wrong.</h2>
+          <p>These are the builds where I had to decide what the system should trust, what it should survive, and what it should never fake.</p>
+        </header>
 
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">View My Work</a>
-                    <a href="#contact"  class="btn-secondary">Contact Me</a>
-                </div>
+        <article class="project-story">
+          <div class="project-stage project-stage-pair">
+            <div class="project-media" aria-label="NexTrade product screenshots">
+              <figure class="project-shot is-primary">
+                <img src="nextrade-home.webp" alt="NexTrade home workspace showing the portfolio balance and active strategy positions" loading="lazy" decoding="async">
+                <figcaption><span>HOME</span><small>Workspace state / active positions</small></figcaption>
+              </figure>
+              <figure class="project-shot is-secondary">
+                <img src="nextrade-market.webp" alt="NexTrade market screen showing trending assets, search and market filters" loading="lazy" decoding="async">
+                <figcaption><span>MARKET</span><small>Live market state / filters</small></figcaption>
+              </figure>
+            </div>
+            <div class="stage-meta"><span>01</span><span>FINANCIAL STATE / MOBILE PWA</span></div>
+          </div>
+          <div class="project-copy">
+            <p class="project-label">NEXTRADE</p>
+            <h3>When the interface cannot be allowed to define the money.</h3>
+            <p>A mobile investment-platform case study built around a transaction ledger, server-authoritative execution, retry-safe mutations and market states that do not collapse every failure into “try again.”</p>
+            <blockquote>The interface can explain financial state. It does not automatically get to define it.</blockquote>
+            <div class="project-actions">
+              <button class="action action-primary open-case" type="button" data-case="nextrade">Open case study</button>
+              <a class="text-link project-link" data-project="nextrade" data-kind="preview" href="#">Preview — add URL</a>
+              <a class="text-link project-link" data-project="nextrade" data-kind="github" href="#">Source — add URL</a>
+            </div>
+          </div>
+        </article>
 
-                <p class="tagline">You have an idea. Maybe it's been sitting in a notes app for six months. Maybe you've talked to a developer before and walked away with nothing to show for it.<br><br>
-I take the idea, ask the right questions, and build the actual thing — auth, database, offline support, the UI, the edge cases, all of it. Not a prototype you can't hand to real users. A product.<br><br>
-I've built an offline POS system used by real traders, a zero-knowledge encryption vault, and a fintech platform — all solo, all the way to production. When you work with me, you get the whole build, not a handoff halfway through.</p>
+        <aside class="field-note"><span>FIELD NOTE 01</span><p>A retry is not a new intention.</p></aside>
 
-                
-            </section>
+        <article class="project-story">
+          <div class="project-stage project-stage-pair">
+            <div class="project-media" aria-label="QuickShop product screenshots">
+              <figure class="project-shot is-primary">
+                <img src="quickshop-offline.webp" alt="QuickShop landing page showing its offline status and inventory-first product promise" loading="lazy" decoding="async">
+                <figcaption><span>OFFLINE</span><small>Core work stays available</small></figcaption>
+              </figure>
+              <figure class="project-shot is-secondary">
+                <img src="quickshop-storefront.webp" alt="QuickShop public vendor storefront with searchable products, stock levels and cart actions" loading="lazy" decoding="async">
+                <figcaption><span>STOREFRONT</span><small>Inventory reaches the customer</small></figcaption>
+              </figure>
+            </div>
+            <div class="stage-meta"><span>02</span><span>OFFLINE-FIRST / COMMERCE</span></div>
+          </div>
+          <div class="project-copy">
+            <p class="project-label">QUICKSHOP</p>
+            <h3>When the user still needs the product after the network disappears.</h3>
+            <p>An offline-capable inventory and storefront system where pending actions persist locally and synchronize against Supabase when connectivity returns.</p>
+            <blockquote>The network became a synchronization target, not a prerequisite for doing useful work.</blockquote>
+            <div class="project-actions">
+              <button class="action action-primary open-case" type="button" data-case="quickshop">Open case study</button>
+              <a class="text-link project-link" data-project="quickshop" data-kind="preview" href="#">Preview — add URL</a>
+              <a class="text-link project-link" data-project="quickshop" data-kind="github" href="#">Source — add URL</a>
+            </div>
+          </div>
+        </article>
 
-            <!-- PROJECTS -->
-            <section id="projects" class="section-block">
-                <h2 class="section-header">Apps I've built</h2>
-                <div class="projects-grid">
+        <aside class="field-note"><span>FIELD NOTE 02</span><p>Offline-first is deciding what remains useful while synchronization is impossible.</p></aside>
 
-                    <article class="project-card card-animate" data-live-url="https://obsidiansecurity.vercel.app/">
-                        <div class="card-header-row">
-                            <div class="card-icon">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                            </div>
-                            <span class="live-badge">● Live</span>
-                        </div>
-                        <div class="card-content">
-                            <h3>Obsidian Secure Vault</h3>
-                            <p>A zero-knowledge PWA where the server never sees your data. Encryption happens entirely in the browser using the <strong>Web Crypto API</strong> — AES-GCM for the data and PBKDF2 for key derivation. Supabase only ever stores ciphertext. Works offline.</p>
-                            <div class="tech-tags"><span>Web Crypto API</span><span>AES-GCM</span><span>Supabase</span><span>PWA</span></div>
-                            <div class="card-links">
-                                <a href="https://obsidiansecurity.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
-                                <a href="https://github.com/Moyinks/obsidian.git" target="_blank" rel="noopener">GitHub</a>
-                                <button class="project-read-more" data-project-id="obsidian" aria-controls="project-modal" aria-expanded="false">
-                                    See Full Story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+        <article class="project-story">
+          <div class="project-stage project-stage-pair">
+            <div class="project-media" aria-label="Obsidian product screenshots">
+              <figure class="project-shot is-primary">
+                <img src="obsidian-key.webp" alt="Obsidian one-time setup screen explaining that the user-controlled encryption key cannot be recovered by the server" loading="lazy" decoding="async">
+                <figcaption><span>KEY HANDOFF</span><small>The backend never receives the secret</small></figcaption>
+              </figure>
+              <figure class="project-shot is-secondary">
+                <img src="obsidian-unlock.webp" alt="Obsidian vault unlock screen requiring the user's encryption key" loading="lazy" decoding="async">
+                <figcaption><span>UNLOCK</span><small>The vault boundary is explicit</small></figcaption>
+              </figure>
+            </div>
+            <div class="stage-meta"><span>03</span><span>CLIENT-SIDE ENCRYPTION / PRIVACY</span></div>
+          </div>
+          <div class="project-copy">
+            <p class="project-label">OBSIDIAN</p>
+            <h3>When storing the data should not mean being able to read it.</h3>
+            <p>A private workspace where note and file contents are encrypted in the browser before synchronization, reducing what the backend needs to know.</p>
+            <blockquote>Store the content. Minimise the trust.</blockquote>
+            <div class="project-actions">
+              <button class="action action-primary open-case" type="button" data-case="obsidian">Open case study</button>
+              <a class="text-link project-link" data-project="obsidian" data-kind="preview" href="#">Preview — add URL</a>
+              <a class="text-link project-link" data-project="obsidian" data-kind="github" href="#">Source — add URL</a>
+            </div>
+          </div>
+        </article>
 
-                    <article class="project-card card-animate" data-live-url="https://quickshopper.vercel.app/">
-                        <div class="card-header-row">
-                            <div class="card-icon">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                            </div>
-                            <span class="live-badge">● Live</span>
-                        </div>
-                        <div class="card-content">
-                            <h3>QuickShop</h3>
-                            <p>A full business tool for traders in low-connectivity markets. <strong>Offline-first</strong> inventory, barcode scanning, one-tap sales — plus a <strong>Gemini AI growth copilot</strong> that analyses sales signals and surfaces advice. A shareable catalog lets customers order via WhatsApp. A referral system with payout tracking handles organic growth.</p>
-                            <div class="tech-tags"><span>Supabase</span><span>IndexedDB</span><span>PWA</span><span>Gemini AI</span><span>ZXing</span></div>
-                            <div class="card-links">
-                                <a href="https://quickshopper.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
-                                <a href="https://github.com/moyinksv-ai/QuickShop.git" target="_blank" rel="noopener">GitHub</a>
-                                <button class="project-read-more" data-project-id="quickshop" aria-controls="project-modal" aria-expanded="false">
-                                    See Full Story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+        <a class="continue-row" href="#lab"><span>Next</span><strong>What I’m building now</strong><b aria-hidden="true">↓</b></a>
+      </section>
 
-                    <article class="project-card card-animate" data-live-url="https://nextradecommerce.vercel.app/">
-                        <div class="card-header-row">
-                            <div class="card-icon">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                            </div>
-                            <span class="live-badge">● Live</span>
-                        </div>
-                        <div class="card-content">
-                            <h3>NexTrade Fintech</h3>
-                            <p>A custody-first fintech platform where every balance is <strong>derived from an append-only ledger</strong> — never stored directly. Seven server-side Postgres RPCs enforce every financial mutation. Guard triggers block direct table writes at the database layer. Balance drift is impossible by architecture, not convention.</p>
-                            <div class="tech-tags"><span>Supabase</span><span>Postgres RPC</span><span>Guard Triggers</span><span>PWA</span><span>Ledger-first</span></div>
-                            <div class="card-links">
-                                <a href="https://nextradecommerce.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
-                                <a href="https://github.com/Moyinks/NexTrade.git" target="_blank" rel="noopener">GitHub</a>
-                                <button class="project-read-more" data-project-id="nextrade" aria-controls="project-modal" aria-expanded="false">
-                                    See Full Story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
+      <section id="lab" class="section lab-section" data-route="Lab" aria-labelledby="lab-title">
+        <header class="section-heading compact inverse">
+          <p class="eyebrow">CURRENTLY BUILDING</p>
+          <h2 id="lab-title">Two questions I haven’t finished answering.</h2>
+          <p>Not polished case studies yet. This is where I’m testing ideas that still need to survive contact with reality.</p>
+        </header>
 
-                </div>
-            </section>
+        <div class="lab-grid">
+          <article class="lab-card">
+            <figure class="lab-shot lab-shot-live">
+              <img src="flowlab-workspace.webp" alt="FlowLab creative workspace for capturing ideas and starting songs" loading="lazy" decoding="async">
+              <figcaption><span>WORKSPACE</span><small>Current build</small></figcaption>
+            </figure>
+            <div class="lab-copy">
+              <span class="lab-state"><i></i>ACTIVE BUILD</span>
+              <p class="project-label">FLOWLAB</p>
+              <h3>Can AI help an artist without writing over them?</h3>
+              <p>An AI-assisted songwriting workspace built around artist voice, rhythm, genre transformation and revision.</p>
+              <div class="current-question"><span>CURRENT QUESTION</span><strong>How much can the system change before it stops sounding like the artist?</strong></div>
+              <div class="lab-links"><a class="text-link project-link" data-project="flowlab" data-kind="preview" href="#">Preview — add URL</a><a class="text-link project-link" data-project="flowlab" data-kind="github" href="#">Source — add URL</a></div>
+            </div>
+          </article>
 
-            <!-- SKILLS -->
-            <section id="skills" class="section-block">
-                <h2 class="section-header">Tech Stack</h2>
-                <div class="skills-wrapper">
-                    <div class="skill-category">
-                        <h3>Core</h3>
-                        <ul class="skills-list">
-                            <li>HTML5 &amp; CSS3</li>
-                            <li>JavaScript (ES6+)</li>
-                            <li>Web Crypto API — AES-GCM, PBKDF2</li>
-                            <li>Gemini AI — Flash 2.0, signal-layer prompting</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Systems</h3>
-                        <ul class="skills-list">
-                            <li>PWA / Service Workers</li>
-                            <li>Supabase — RLS, Auth, Postgres</li>
-                            <li>Security Definer RPCs &amp; Guard Triggers</li>
-                            <li>IndexedDB — offline-first sync queues</li>
-                            <li>E2EE Architecture — zero server plaintext</li>
-                            <li>ethers.js — HD wallet key derivation</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <ul class="skills-list">
-                            <li>Vercel — edge functions, serverless</li>
-                            <li>Git &amp; GitHub</li>
-                            <li>LightweightCharts — live candlestick feeds</li>
-                            <li>Sentry — production error monitoring</li>
-                            <li>Chrome DevTools</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+          <article class="lab-card">
+            <figure class="lab-shot lab-shot-live">
+              <img src="betabot-signal.webp" alt="Betabot signal center showing a WAIT decision and the rule gates behind it" loading="lazy" decoding="async">
+              <figcaption><span>SIGNAL CENTER</span><small>Current test state</small></figcaption>
+            </figure>
+            <div class="lab-copy">
+              <span class="lab-state lab-state-testing"><i></i>TESTING</span>
+              <p class="project-label">BETABOT</p>
+              <h3>Can a trading idea survive being made explicit?</h3>
+              <p>A deterministic Forex analysis engine that turns a discretionary H4/M15 process into rules that can be tested, rejected and improved.</p>
+              <div class="current-question"><span>CURRENT QUESTION</span><strong>Does the strategy still make sense when the rules cannot move after seeing the result?</strong></div>
+              <div class="lab-links"><a class="text-link project-link" data-project="betabot" data-kind="preview" href="#">Preview — add URL</a><a class="text-link project-link" data-project="betabot" data-kind="github" href="#">Source — add URL</a></div>
+            </div>
+          </article>
+        </div>
 
-            <!-- ABOUT -->
-            <section id="about" class="section-block">
-                <h2 class="section-header">About Me</h2>
-                <div class="about-layout">
-                    <div class="about-photo-wrap">
-                        <img src="moses.jpg" alt="Moses Olayinka" class="about-photo">
-                        <div class="about-photo-fade"></div>
-                    </div>
-                    <div class="about-content">
-                        <p class="about-opener">The teams that win have one person who can sell the idea to a stranger in an elevator. That's me.</p>
-                        <div class="avail-pill available">
-                            <span class="avail-dot"></span>
-                            <span>Available for new projects</span>
-                        </div>
-                        <p>What you've seen here wasn't built in a studio. Every project on this page — encryption vaults, offline POS systems, including this portfolio — was architected, coded, and shipped from an Android phone.</p>
-                        <p>That constraint wasn't a handicap. It was the discipline that shaped how I think: build for the edge, design for real conditions, ship things that actually work when the network drops and the device is three years old.</p>
-                        <p>I care about systems that hold. Not demos that dazzle once. If you've read this far, you already know what I can do. The question is what we build next.</p>
-                    </div>
-                </div>
-            </section>
+        <a class="continue-row inverse" href="#about"><span>Next</span><strong>Why I notice these things</strong><b aria-hidden="true">↓</b></a>
+      </section>
 
-            <!-- CONTACT -->
-            <section id="contact" class="section-block contact-section">
-                <h2 class="section-header">Got an idea?</h2>
-                <p class="contact-tagline">Let's have a real conversation about it. You tell me what you're trying to build. I'll tell you how long it takes, what it costs, and what it looks like when it's done.</p>
+      <section id="about" class="section about-section" data-route="About" aria-labelledby="about-title">
+        <figure class="portrait-interrupt">
+          <img src="moses.jpg" alt="Portrait of Moses Ogundahunsi">
+          <figcaption><span>BUILT UNDER CONSTRAINT</span><strong>The setup shaped what I notice.</strong></figcaption>
+        </figure>
 
-                <!-- Contact form — replace YOUR_FORM_ID with your Formspree endpoint -->
-                <form id="contact-form" class="contact-form" action="https://formspree.io/f/mdajvrbw" method="POST" novalidate>
-                    <textarea name="message" id="contact-message" placeholder="What are you building?" rows="4" required></textarea>
-                    <input type="email" name="_replyto" id="contact-email" placeholder="Your email address" required>
-                    <button type="submit" class="btn-primary contact-submit" id="contact-submit">
-                        Send Message
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
-                    <p class="contact-form-status" id="contact-status" aria-live="polite"></p>
-                </form>
+        <header class="section-heading about-heading">
+          <p class="eyebrow">ABOUT</p>
+          <h2 id="about-title">This wasn’t the setup.</h2>
+        </header>
 
-                <div class="contact-links">
-                    <a href="/cdn-cgi/l/email-protection#3c51534f594f58594a7c59445d514c5059125f5351" class="contact-pill email">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        Email
-                    </a>
-                    <a href="https://x.com/zerotomoses" target="_blank" rel="noopener" class="contact-pill">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-                        X / Twitter
-                    </a>
-                    <a href="https://github.com/Moyinks" target="_blank" rel="noopener" class="contact-pill resume">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        GitHub
-                    </a>
-                </div>
-            </section>
+        <div class="about-copy">
+          <p>I didn’t start with a development workstation. A lot of what you’re looking at was built through Acode and Termux on an Android phone, pushed through GitHub, deployed to Vercel and backed by Supabase.</p>
+          <p class="about-pivot">That isn’t the impressive part.</p>
+          <p>The useful part is what it made difficult to ignore: memory limits, mobile browsers, keyboards, reconnects, stale state, awkward tooling and the difference between software that demos well and software that survives being used.</p>
+          <p>I like the distance between the person describing the problem and the system that eventually has to solve it. I can stay in that conversation all the way down.</p>
+          <p class="about-ending">I’m looking for the room where those details matter.</p>
+        </div>
 
-            <footer class="main-footer">
-                <p>&copy; <span id="footer-year"></span> Moses Olayinka O.</p>
-            </footer>
+        <aside class="field-note field-note-wide"><span>FIELD NOTE 03</span><p>Perfect tools would probably have taught me different lessons.</p></aside>
 
-        </div><!-- /.scroll-container -->
+        <a class="continue-row" href="#contact"><span>Next</span><strong>Bring me the problem</strong><b aria-hidden="true">↓</b></a>
+      </section>
+
+      <section id="contact" class="section contact-section" data-route="Contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="eyebrow">WORK WITH ME</p>
+          <h2 id="contact-title">Bring me the problem, not the feature list.</h2>
+          <p>If you’re hiring, I’m looking for a product/engineering team where ownership goes further than closing tickets.</p>
+          <p>If you’re building something, send me the workflow nobody has simplified yet, the thing that keeps breaking, or the part your system absolutely cannot get wrong.</p>
+          <p class="contact-line">I care more about the problem than whether it arrives as a job description or a project brief.</p>
+        </div>
+
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mdajvrbw" method="POST">
+          <input type="hidden" name="_subject" id="form-subject" value="I'm hiring — Portfolio enquiry">
+          <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <fieldset class="intent-fieldset">
+            <legend>What brings you here?</legend>
+            <div class="intent-switch" role="radiogroup" aria-label="Reason for contacting Moses">
+              <label><input type="radio" name="intent" value="I'm hiring" checked><span>Hiring</span></label>
+              <label><input type="radio" name="intent" value="I have a project"><span>Project</span></label>
+              <label><input type="radio" name="intent" value="Something else"><span>Other</span></label>
+            </div>
+          </fieldset>
+
+          <label class="field-label" for="message">Start with the problem</label>
+          <textarea id="message" name="message" required rows="5" placeholder="What are people trying to do? Where does it currently fail? What must never go wrong?"></textarea>
+
+          <label class="field-label" for="email">Your email</label>
+          <input id="email" type="email" name="_replyto" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+
+          <button class="action action-primary send-button" type="submit">Send the problem</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+        </form>
+
+        <a class="continue-row back-top" href="#home"><span>Finished</span><strong>Back to the start</strong><b aria-hidden="true">↑</b></a>
+      </section>
+
+      <footer class="site-footer">
+        <p>© 2026 Moses Ogundahunsi.</p>
+        <p>Built as a mobile product, not a résumé page.</p>
+      </footer>
     </main>
 
-    <!-- ===== MOBILE DOCK ===== -->
-    <nav class="mobile-dock" aria-label="Mobile navigation">
-        <a href="#home" class="dock-item active">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <span>Home</span>
-        </a>
-        <a href="#projects" class="dock-item">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <span>Work</span>
-        </a>
-        <button id="mobile-theme-toggle" class="dock-item central-btn" aria-label="Toggle Theme">
-            <div class="btn-bg">
-                <svg class="icon icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                <svg class="icon icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </div>
-        </button>
-        <a href="#skills" class="dock-item">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <span>Stack</span>
-        </a>
-        <a href="#contact" class="dock-item">
-            <svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span>Chat</span>
-        </a>
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <a href="#home" data-nav="home" class="is-active" aria-label="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H14v-5h-4v5H4z"/></svg><span>Home</span></a>
+      <a href="#work" data-nav="work" aria-label="Work"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M8 6V4h8v2M3 11h18"/></svg><span>Work</span></a>
+      <a href="#lab" data-nav="lab" aria-label="Lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 15h9"/></svg><span>Lab</span></a>
+      <a href="#about" data-nav="about" aria-label="About"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg><span>About</span></a>
+      <a href="#contact" data-nav="contact" aria-label="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg><span>Contact</span></a>
     </nav>
+  </div>
 
-    <!-- ===== PROJECT MODAL ===== -->
-    <!-- Shockwave ring element — appended outside modal so it isn't clipped -->
-    <div id="shockwave-ring" class="shockwave-ring" aria-hidden="true"></div>
-
-    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-content">
-            <header class="modal-header">
-                <div class="modal-header-text">
-                    <h2 id="modal-title" class="modal-title">Project Title</h2>
-                    <div id="modal-tech-tags" class="tech-tags"></div>
-                </div>
-                <button id="close-modal" class="icon-btn modal-close" aria-label="Close Project Story">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
-            </header>
-            <div class="modal-body">
-                <div class="modal-hero-image-container">
-                    <img id="modal-hero-image" src="" alt="Project hero image" class="modal-hero-img">
-                </div>
-                <div class="modal-section">
-                    <h3>The Problem</h3>
-                    <p id="modal-problem"></p>
-                </div>
-                <div class="modal-section">
-                    <h3>The Solution</h3>
-                    <p id="modal-solution"></p>
-                </div>
-                <div class="modal-section">
-                    <h3>The Impact</h3>
-                    <p id="modal-impact"></p>
-                </div>
-                <div class="modal-section" id="modal-arch-section">
-                    <h3>The Architecture Decision</h3>
-                    <p id="modal-arch-decision"></p>
-                </div>
-                <div class="modal-images-section">
-                    <h3>Screenshots</h3>
-                    <div id="modal-images-grid" class="modal-images"></div>
-                </div>
-            </div>
-            <footer class="modal-footer">
-                <a id="modal-live-demo" href="#" target="_blank" rel="noopener" class="btn-primary">
-                    View Live Demo
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-                <a id="modal-github" href="#" target="_blank" rel="noopener" class="btn-secondary">
-                    View GitHub Repo
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-            </footer>
+  <dialog class="case-dialog" id="case-nextrade" aria-labelledby="case-nextrade-title">
+    <div class="case-shell">
+      <header class="case-bar">
+        <button class="case-back" type="button" aria-label="Close case study">←</button>
+        <span>NexTrade / case study</span>
+        <button class="icon-control case-close" type="button" aria-label="Close">×</button>
+      </header>
+      <div class="case-scroll">
+        <div class="case-hero">
+          <p class="project-label">NEXTRADE / 01</p>
+          <h2 id="case-nextrade-title">The interface can explain the state. It cannot define it.</h2>
+          <p>A financial system gets dangerous when presentation quietly becomes authority.</p>
         </div>
+        <div class="case-gallery" aria-label="NexTrade product states">
+          <figure class="case-screen">
+            <div class="case-screen-frame"><img src="nextrade-home.webp" alt="NexTrade home workspace showing ledger-backed portfolio state and active strategies" loading="lazy" decoding="async"></div>
+            <figcaption><span>01</span><strong>Workspace state</strong><small>Balance, position progress and strategy state stay readable without making the screen authoritative.</small></figcaption>
+          </figure>
+          <figure class="case-screen">
+            <div class="case-screen-frame"><img src="nextrade-market.webp" alt="NexTrade market workspace with trending assets, search and filters" loading="lazy" decoding="async"></div>
+            <figcaption><span>02</span><strong>Market state</strong><small>Search, filters, trends and fallback states are separate decisions instead of one generic loading state.</small></figcaption>
+          </figure>
+        </div>
+        <section class="case-section"><div class="case-kicker"><span>01</span><b>THE SITUATION</b></div><div class="case-body"><h3>A balance can look right while being wrong.</h3><p>Client state can be stale, a request can commit while its response disappears, and a user can retry because the interface gave no useful answer. Treating the displayed number as financial truth makes all of those ordinary failures expensive.</p></div></section>
+        <section class="case-section"><div class="case-kicker"><span>02</span><b>THE RULE</b></div><div class="case-body"><h3>Put financial truth behind the interface.</h3><p>Spot and Vault state are derived from authoritative ledger/database rules. Trading resolves execution authority server-side. Retryable financial actions carry stable identities so the same intention does not become two actions because the network behaved badly.</p></div></section>
+        <section class="case-section"><div class="case-kicker"><span>03</span><b>WHAT THAT FORCED ME TO CHANGE</b></div><div class="case-body"><ul><li>Separate presentation readiness from financial authority.</li><li>Preserve warm workspace state while authoritative balances revalidate.</li><li>Distinguish cached, stale, refreshing, rate-limited and unavailable market states.</li><li>Keep execution price outside browser authority.</li><li>Encode architectural constraints in repository-owned release audits.</li></ul></div></section>
+        <section class="case-section"><div class="case-kicker"><span>04</span><b>WHERE IT BROKE</b></div><div class="case-body"><h3>The useful bugs were rarely where they first appeared.</h3><p>Market timeframes reset, returning sessions blanked, image loading raced, and generic feedback repeated. Fixing those exposed deeper rules about async identity, attention, cache provenance and warm-state restoration.</p></div></section>
+        <section class="case-section case-lesson"><div class="case-kicker"><span>05</span><b>WHAT I KNOW NOW</b></div><div class="case-body"><blockquote>Cached state can preserve the experience. It cannot inherit the authority of the ledger.</blockquote></div></section>
+        <div class="case-actions"><a class="action action-primary project-link" data-project="nextrade" data-kind="preview" href="#">Preview — add URL</a><a class="action action-quiet project-link" data-project="nextrade" data-kind="github" href="#">Source — add URL</a></div>
+      </div>
     </div>
+  </dialog>
 
-</div><!-- /.app-layout -->
+  <dialog class="case-dialog" id="case-quickshop" aria-labelledby="case-quickshop-title">
+    <div class="case-shell">
+      <header class="case-bar"><button class="case-back" type="button" aria-label="Close case study">←</button><span>QuickShop / case study</span><button class="icon-control case-close" type="button" aria-label="Close">×</button></header>
+      <div class="case-scroll">
+        <div class="case-hero"><p class="project-label">QUICKSHOP / 02</p><h2 id="case-quickshop-title">The network became a synchronization target, not a prerequisite.</h2><p>Useful business work should not vanish because connectivity does.</p></div>
+        <div class="case-gallery" aria-label="QuickShop product states">
+          <figure class="case-screen">
+            <div class="case-screen-frame"><img src="quickshop-offline.webp" alt="QuickShop landing page showing the app is offline while work remains available" loading="lazy" decoding="async"></div>
+            <figcaption><span>01</span><strong>Offline is visible</strong><small>The product names the network condition without turning it into a dead end.</small></figcaption>
+          </figure>
+          <figure class="case-screen">
+            <div class="case-screen-frame"><img src="quickshop-storefront.webp" alt="QuickShop public storefront showing vendor products, stock and cart actions" loading="lazy" decoding="async"></div>
+            <figcaption><span>02</span><strong>Inventory reaches the customer</strong><small>The internal inventory state becomes a searchable storefront with stock-aware ordering.</small></figcaption>
+          </figure>
+        </div>
+        <section class="case-section"><div class="case-kicker"><span>01</span><b>THE SITUATION</b></div><div class="case-body"><h3>Small-business software meets bad networks quickly.</h3><p>Inventory work, sales and catalogue updates happen on phones in conditions where connectivity can be weak, interrupted or simply unavailable.</p></div></section>
+        <section class="case-section"><div class="case-kicker"><span>02</span><b>THE RULE</b></div><div class="case-body"><h3>Persist the intention before waiting for the network.</h3><p>Pending actions live locally in IndexedDB and reconcile against Supabase when connectivity returns. The service worker and sync layer have separate jobs instead of pretending “offline” is one feature.</p></div></section>
+        <section class="case-section"><div class="case-kicker"><span>03</span><b>WHAT THAT FORCED ME TO CHANGE</b></div><div class="case-body"><ul><li>Design local persistence and pending synchronization explicitly.</li><li>Handle stale caches and service-worker upgrades instead of hiding them.</li><li>Keep inventory, reporting, vendor catalogue and WhatsApp ordering coherent across different product surfaces.</li><li>Treat mobile interaction and low-cost Android behavior as first-class constraints.</li></ul></div></section>
+        <section class="case-section"><div class="case-kicker"><span>04</span><b>WHERE IT BROKE</b></div><div class="case-body"><h3>A loading skeleton that never leaves is still a data bug.</h3><p>Chrome and Opera behaved differently under stale service-worker state, exposing how easily cache strategy can masquerade as a rendering problem.</p></div></section>
+        <section class="case-section case-lesson"><div class="case-kicker"><span>05</span><b>WHAT I KNOW NOW</b></div><div class="case-body"><blockquote>Offline-first is not “make a cache.” It is deciding what can stay useful while synchronization is impossible.</blockquote></div></section>
+        <div class="case-actions"><a class="action action-primary project-link" data-project="quickshop" data-kind="preview" href="#">Preview — add URL</a><a class="action action-quiet project-link" data-project="quickshop" data-kind="github" href="#">Source — add URL</a></div>
+      </div>
+    </div>
+  </dialog>
 
-<script>var el=document.getElementById('footer-year');if(el)el.textContent=new Date().getFullYear();</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
-    });
-  }
-</script>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-
+  <dialog class="case-dialog" id="case-obsidian" aria-labelledby="case-obsidian-title">
+    <div class="case-shell">
+      <header class="case-bar"><button class="case-back" type="button" aria-label="Close case study">←</button><span>Obsidian / case study</span><button class="icon-control case-close" type="button" aria-label="Close">×</button></header>
+      <div class="case-scroll">
+        <div class="case-hero"><p class="project-label">OBSIDIAN / 03</p><h2 id="case-obsidian-title">Store the content. Minimise the trust.</h2><p>Encryption is more interesting when it changes what the backend is allowed to know.</p></div>
+        <div class="case-gallery" aria-label="Obsidian privacy boundary states">
+          <figure class="case-screen">
+            <div class="case-screen-frame"><img src="obsidian-key.webp" alt="Obsidian one-time encryption key setup screen explaining the key cannot be recovered by the server" loading="lazy" decoding="async"></div>
+            <figcaption><span>01</span><strong>Key handoff</strong><small>The product tells the user what the privacy model costs: lose the key and the server cannot rescue the content.</small></figcaption>
+          </figure>
+          <figure class="case-screen">
+            <div class="case-screen-frame"><img src="obsidian-unlock.webp" alt="Obsidian vault unlock screen requiring the client-controlled encryption key" loading="lazy" decoding="async"></div>
+            <figcaption><span>02</span><strong>Unlock boundary</strong><small>Authentication opens the account; the client-held key opens the encrypted content.</small></figcaption>
+          </figure>
+        </div>
+        <section class="case-section"><div class="case-kicker"><span>01</span><b>THE SITUATION</b></div><div class="case-body"><h3>“Protected on the server” still means the server can usually read it.</h3><p>For private notes and files, I wanted the storage layer to hold useful data without automatically inheriting the ability to decrypt the content.</p></div></section>
+        <section class="case-section"><div class="case-kicker"><span>02</span><b>THE RULE</b></div><div class="case-body"><h3>Encrypt before synchronization.</h3><p>The browser uses the Web Crypto API, AES-GCM and a derived key so note/file contents become ciphertext before reaching Supabase. The active decryption key remains client-controlled.</p></div></section>
+        <section class="case-section"><div class="case-kicker"><span>03</span><b>WHAT THAT FORCED ME TO CHANGE</b></div><div class="case-body"><ul><li>Make encryption part of the data model, not a badge in the UI.</li><li>Keep the master key outside backend storage.</li><li>Treat lock/unlock state as a real application boundary.</li><li>Be precise about what is protected: content is encrypted, while authentication and limited metadata still exist outside that ciphertext.</li></ul></div></section>
+        <section class="case-section"><div class="case-kicker"><span>04</span><b>WHERE THE IDEA STOPS</b></div><div class="case-body"><h3>Zero knowledge is a threat-model claim, not a vibe.</h3><p>Client-side encryption reduces what the backend can learn from stored content, but frontend integrity and metadata still matter. The project is stronger when those limits are explicit.</p></div></section>
+        <section class="case-section case-lesson"><div class="case-kicker"><span>05</span><b>WHAT I KNOW NOW</b></div><div class="case-body"><blockquote>Privacy is often less about adding protection everywhere than about removing knowledge from places that never needed it.</blockquote></div></section>
+        <div class="case-actions"><a class="action action-primary project-link" data-project="obsidian" data-kind="preview" href="#">Preview — add URL</a><a class="action action-quiet project-link" data-project="obsidian" data-kind="github" href="#">Source — add URL</a></div>
+      </div>
+    </div>
+  </dialog>
 </body>
 </html>
