@@ -1,4 +1,4 @@
-const CACHE = 'moses-portfolio-v6-2';
+const CACHE = 'moses-portfolio-v6-3';
 const PRECACHE = [
   '/',
   '/index.html',

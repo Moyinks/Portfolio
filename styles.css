@@ -181,11 +181,11 @@ html[data-theme="light"] .sun-icon { display: none; }
 }
 .hero-section {
   border-top: 0;
-  min-height: clamp(500px, 72svh, 690px);
+  min-height: clamp(465px, 68svh, 610px);
   display: grid;
   align-items: center;
-  padding-top: clamp(52px, 10vw, 88px);
-  padding-bottom: clamp(56px, 12vw, 94px);
+  padding-top: clamp(46px, 9vw, 64px);
+  padding-bottom: clamp(46px, 9vw, 64px);
 }
 .hero-copy { width: 100%; }
 .hero-copy h1 {
@@ -200,7 +200,7 @@ html[data-theme="light"] .sun-icon { display: none; }
 .hero-copy h1 em { color: var(--accent); font-style: normal; }
 .hero-lede {
   max-width: 660px;
-  margin: 24px 0 0;
+  margin: 22px 0 0;
   color: var(--muted);
   font-size: clamp(17px, 4.35vw, 20px);
   line-height: 1.58;
@@ -208,7 +208,7 @@ html[data-theme="light"] .sun-icon { display: none; }
 }
 .hero-actions, .project-actions, .case-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .hero-actions {
-  margin-top: 30px;
+  margin-top: 26px;
   align-items: center;
   gap: 10px 20px;
 }
@@ -238,7 +238,7 @@ html[data-theme="light"] .sun-icon { display: none; }
   min-height: 44px;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 0;
   padding: 0 2px;
   color: var(--muted);
   text-decoration: none;
@@ -246,9 +246,7 @@ html[data-theme="light"] .sun-icon { display: none; }
   font-weight: 800;
   transition: color var(--state) ease;
 }
-.hero-text-action span { color: var(--accent); transition: transform var(--state) var(--ease-out); }
 .hero-text-action:hover { color: var(--text); }
-.hero-text-action:hover span { transform: translate(2px, 2px); }
 
 /* The live-build strip is deliberately separated from the hero. The opening
    establishes one idea; this is the first piece of changing product state. */
@@ -257,7 +255,7 @@ html[data-theme="light"] .sun-icon { display: none; }
   padding-bottom: 0;
 }
 .now-live {
-  min-height: 128px;
+  min-height: 112px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
@@ -265,7 +263,7 @@ html[data-theme="light"] .sun-icon { display: none; }
     "main arrow";
   align-items: center;
   column-gap: 20px;
-  padding: 23px 0 25px;
+  padding: 18px 0 20px;
   color: var(--text);
   text-decoration: none;
 }
@@ -283,8 +281,8 @@ html[data-theme="light"] .sun-icon { display: none; }
   grid-area: main;
   min-width: 0;
   display: grid;
-  gap: 7px;
-  margin-top: 10px;
+  gap: 5px;
+  margin-top: 7px;
 }
 .now-product {
   color: var(--text);
@@ -297,8 +295,8 @@ html[data-theme="light"] .sun-icon { display: none; }
 .now-question-wrap > span {
   display: block;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 12.5px;
+  line-height: 1.42;
 }
 .now-arrow {
   grid-area: arrow;
@@ -1025,7 +1023,7 @@ body.case-open { overflow: hidden; }
   .rail-footer p { margin: 0; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 10px; line-height: 1.35; }
   .main-view { padding: 0 0 0 var(--rail); }
   .section { padding: 72px 52px; scroll-margin-top: 0; }
-  .hero-section { min-height: min(760px, 82vh); padding-top: 72px; padding-bottom: 78px; }
+  .hero-section { min-height: min(740px, 80vh); padding-top: 70px; padding-bottom: 70px; }
   .now-section { padding-top: 0; padding-bottom: 0; }
   .lab-section { width: min(calc(100% - 72px), var(--max)); margin-block: 18px; padding: 50px 44px; }
   .portrait-interrupt { max-width: 900px; }
