@@ -8,16 +8,24 @@
   <meta property="og:title" content="Moses Ogundahunsi — Product-minded Software Developer">
   <meta property="og:description" content="I build the part after 'it works'. Mobile-first products, state, recovery, trust and the failure paths that decide whether software holds up in use.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="moses.jpg">
+  <meta property="og:image" content="https://moyinks.vercel.app/moses.jpg">
+  <meta property="og:url" content="https://moyinks.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Moses O.">
   <title>Moses Ogundahunsi — Product-minded Software Developer</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="pwa-192.png">
   <link rel="preload" as="image" href="moses.jpg">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
   <script>
     (function () {
-      var saved = localStorage.getItem('mo-theme');
-      document.documentElement.setAttribute('data-theme', saved || 'dark');
+      var theme = 'dark';
+      try { theme = localStorage.getItem('mo-theme') || 'dark'; } catch (_) {}
+      document.documentElement.setAttribute('data-theme', theme);
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#f2efe7' : '#0b0d0b');
     })();
   </script>
   <script src="project-links.js" defer></script>
@@ -65,25 +73,25 @@
     <main id="main" class="main-view">
       <section id="home" class="section hero-section" data-route="Home">
         <div class="hero-copy">
-          <p class="hero-status"><i class="presence-dot" aria-hidden="true"></i> Open to engineering/product roles + selected freelance work</p>
-          <p class="hero-id">Moses Ogundahunsi · product-minded software developer</p>
           <h1>I build the part after <em>“it works.”</em></h1>
           <p class="hero-lede">The first version proves the idea. I care about what happens next — when the network disappears, somebody taps twice, two states disagree, the browser wakes up stale, or the interface tells a convincing lie.</p>
           <div class="hero-actions">
             <a class="action action-primary" href="#work">See what I’ve built</a>
-            <a class="action action-quiet" href="#contact">Bring me a problem</a>
+            <a class="hero-text-action" href="#contact">Bring me a problem <span aria-hidden="true">↘</span></a>
           </div>
-
-          <a class="now-live" href="#lab" aria-label="Currently building FlowLab and Betabot. Jump to Lab.">
-            <span class="now-mark"><i></i>NOW</span>
-            <span class="now-product" id="now-product" aria-hidden="true">FlowLab</span>
-            <span class="now-question-wrap" aria-hidden="true"><span id="now-question">How much can AI change before the artist disappears?</span></span>
-            <span class="now-arrow" aria-hidden="true">↘</span>
-            <span class="sr-only">Currently building FlowLab and Betabot.</span>
-          </a>
         </div>
+      </section>
 
-        <a class="continue-row" href="#useful"><span>Start here</span><strong>Where software stops being simple</strong><b aria-hidden="true">↓</b></a>
+      <section class="section now-section" data-route="Home" aria-label="Currently building">
+        <a class="now-live" href="#lab" aria-label="Currently building FlowLab and Betabot. Jump to Lab.">
+          <span class="now-mark"><i aria-hidden="true"></i>CURRENTLY BUILDING</span>
+          <span class="now-main" aria-hidden="true">
+            <strong class="now-product" id="now-product">FlowLab</strong>
+            <span class="now-question-wrap"><span id="now-question">How much can AI change before the artist disappears?</span></span>
+          </span>
+          <span class="now-arrow" aria-hidden="true">↘</span>
+          <span class="sr-only">FlowLab and Betabot are currently in active development.</span>
+        </a>
       </section>
 
       <section id="useful" class="section useful-section" data-route="Home" aria-labelledby="useful-title">

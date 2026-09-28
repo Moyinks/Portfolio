@@ -7,12 +7,22 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let activeCaseTrigger = null;
 
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    localStorage.setItem('mo-theme', theme);
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#f2efe7' : '#0b0d0b');
+  function syncThemeControls(theme) {
+    const isLight = theme === 'light';
+    document.querySelectorAll('.theme-toggle').forEach((button) => {
+      button.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+      button.setAttribute('aria-pressed', String(isLight));
+    });
   }
 
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    try { localStorage.setItem('mo-theme', theme); } catch (_) {}
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#f2efe7' : '#0b0d0b');
+    syncThemeControls(theme);
+  }
+
+  syncThemeControls(root.getAttribute('data-theme') || 'dark');
   document.querySelectorAll('.theme-toggle').forEach((button) => {
     button.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
   });
@@ -58,7 +68,12 @@
 
   function setActiveRoute(route) {
     const key = route.toLowerCase();
-    navLinks.forEach((link) => link.classList.toggle('is-active', link.dataset.nav === key));
+    navLinks.forEach((link) => {
+      const isActive = link.dataset.nav === key;
+      link.classList.toggle('is-active', isActive);
+      if (isActive) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
     if (routeLabel) routeLabel.textContent = route;
   }
 
@@ -118,20 +133,38 @@
     };
 
     const start = () => {
-      if (timer) return;
+      if (timer || document.hidden) return;
       timer = window.setInterval(change, 6400);
     };
     const stop = () => {
       if (!timer) return;
-      clearInterval(timer);
+      window.clearInterval(timer);
       timer = null;
     };
 
-    strip.addEventListener('mouseenter', stop);
-    strip.addEventListener('mouseleave', start);
+    // Only real hover devices pause on hover. Touch browsers can synthesize
+    // mouse events, so binding these unconditionally can strand the rotator.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      strip.addEventListener('mouseenter', stop);
+      strip.addEventListener('mouseleave', start);
+    }
+
+    // Keyboard focus pauses changing text. Pointer/touch activation blurs the
+    // same-page anchor again so navigation cannot leave the cycle paused.
     strip.addEventListener('focusin', stop);
     strip.addEventListener('focusout', start);
-    strip.addEventListener('pointerdown', stop, { passive: true });
+    strip.addEventListener('click', (event) => {
+      if (event.detail > 0) {
+        strip.blur();
+        start();
+      }
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
+
     start();
   }
 
